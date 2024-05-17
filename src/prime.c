@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/prime.h"
+#include <stdbool.h>
+#include "../include/limit.h"
 
 limit_t *initializeLimits()
 {
