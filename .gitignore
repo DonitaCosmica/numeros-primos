@@ -1,1 +1,4 @@
 app
+src/input.o
+src/prime.o
+main.o

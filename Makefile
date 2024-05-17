@@ -1,13 +1,18 @@
-# Definición de variables
+TARGET = app
+SRCS = main.c src/prime.c src/input.c
+OBJS = $(SRCS:.c=.o)
 CC = gcc
 CFLAGS = -Wall
-TARGET = app
-SRC = main.c
 
-$(TARGET): $(SRC)
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^
 
-clean:
-	rm -f $(TARGET)
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $<
 
-.PHONY: clean
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+.PHONY: all clean
